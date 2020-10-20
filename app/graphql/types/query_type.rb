@@ -7,11 +7,6 @@ module Types
       Event.find(id)
     end
 
-    field :events, [Types::EventType], null: false
-    def events
-      Event.all
-    end
-
     field :group, Types::GroupType, null: false do
       argument :id, ID, required: true
     end

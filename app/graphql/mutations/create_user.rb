@@ -3,7 +3,7 @@ class Mutations::CreateUser < Mutations::BaseMutation
   argument :password, String, required: true
   argument :password_confirmation, String, required: true
 
-  field :user, Types::UserType, null: false
+  field :user, Types::UserType, null: true
   field :errors, [String], null: false
 
   def resolve(username:, password:, password_confirmation:)

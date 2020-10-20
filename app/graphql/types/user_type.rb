@@ -3,9 +3,13 @@ module Types
     field :id, ID, null: false
     field :username, String, null: false
     field :groups, [Types::GroupType], null: true
+    field :comments, [Types::CommentType], null: true
 
     def groups
       object.groups
+    end
+    def comments
+      object.comments
     end
   end
 end

@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+def main
+  files = Dir.children("#{Dir.home()}/Developer/nugroup/app/assets/elm/src/Page")
+  files.each do |file|
+    javascript = (file.match(/(.+).elm/))[1].downcase + ".js"
+    puts `cd ~/Developer/nugroup/app/assets/elm; elm make src/Page/#{file} --output=../../../public/js/#{javascript}`
+  end
+end
+
+main

@@ -1,4 +1,8 @@
 class PageController < ApplicationController
-  def index
+  def home
+  end
+
+  def group
+    @group = Group.find(params[:id])
   end
 end

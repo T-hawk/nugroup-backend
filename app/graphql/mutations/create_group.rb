@@ -9,6 +9,7 @@ class Mutations::CreateGroup < Mutations::BaseMutation
   def resolve(name:, user_id:, auth_token:)
     user = User.validate_user(id: user_id, auth_token: auth_token)
     group = Group.new(name: name)
+    group.users << user
     if group.save
       { group: group, errors: [] }
     else

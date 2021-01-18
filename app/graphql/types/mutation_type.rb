@@ -4,6 +4,7 @@ module Types
     field :create_event, mutation: Mutations::CreateEvent
     field :create_comment, mutation: Mutations::CreateComment
     field :create_group, mutation: Mutations::CreateGroup
+    field :login, mutation: Mutations::Login
 
     field :join_group, mutation: Mutations::JoinGroup
   end
